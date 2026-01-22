@@ -1,0 +1,4 @@
+v 4
+file "/home/stefies/inp24/inp-projekt1/zadani/test/" "../src/cpu.vhd" "9c101f6be38a7e5450f1cc0d7ea6da02a8b43596" "20241111185130.209":
+  entity cpu at 6( 214) + 0 on 11;
+  architecture behavioral of cpu at 48( 2336) + 0 on 12;

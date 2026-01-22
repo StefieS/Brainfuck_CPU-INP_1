@@ -1,0 +1,185 @@
+ghdl -i --ieee=synopsys -fexplicit --workdir=build --work=work ../src/cpu.vhd
+ghdl -m --ieee=synopsys -fexplicit --workdir=build -Pbuild --work=work cpu
+ghdl -r --ieee=synopsys -fexplicit --workdir=build -Pbuild --work=work cpu --vpi=/home/stefies/.local/lib/python3.10/site-packages/cocotb/libs/libcocotbvpi_ghdl.so --wave=build/wave.ghw 
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:76   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on GHDL version 1.0.0 (Ubuntu 1.0.0+dfsg-6) [Dunoon edition]
+     0.00ns INFO     cocotb                             Running tests with cocotb v1.7.1 from /home/stefies/.local/lib/python3.10/site-packages/cocotb
+     0.00ns INFO     cocotb                             Seeding Python random module with 1730133821
+     0.00ns INFO     cocotb.hexdigest                   lib: 47382bf4ccf309a0c56cb33a5e15d78e
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_reset
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_init
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_increment
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_decrement
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_move
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_print
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_input
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_while_loop
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_tmp
+     0.00ns INFO     cocotb.regression                  Found test cpu.test_login_stefies
+     0.00ns INFO     cocotb.regression                  running test_reset (1/10)
+     0.00ns INFO     cocotb.hexdigest                   test: b9ba3fde282142b4a4d9ba842c1d1ac1
+    51.00ns INFO     cocotb.regression                  test_reset failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 20, in test_reset
+                                                            assert (dut.done.value.binstr == '0'), "Invalid done value"
+                                                        AssertionError: Invalid done value
+                                                        assert 'U' == '0'
+                                                         +  where 'U' = U.binstr
+                                                         +    where U = ModifiableObject(cpu.done).value
+                                                         +      where ModifiableObject(cpu.done) = HierarchyObject(cpu).done
+    51.00ns INFO     cocotb.regression                  running test_init (2/10)
+                                                          Procesor initialization test
+    51.00ns INFO     cocotb.hexdigest                   test: 5c96220b5e08768c8fc0396141c2ff7d
+    52.00ns INFO     cocotb.hexdigest                   code: 420cd9f16e90b08dbdf5195fdd9d0f62 len: 1
+  1106.00ns INFO     cocotb.regression                  test_init failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 29, in test_init
+                                                            instcnt, mem, _ = await run_program(dut, '@')
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+  1106.00ns INFO     cocotb.regression                  running test_increment (3/10)
+                                                          Increment value of the first memory cell, i.e. *ptr++
+  1106.00ns INFO     cocotb.hexdigest                   test: 535a0b559505a79d563c207866f37816
+  1107.00ns INFO     cocotb.hexdigest                   code: 83fdb8859bf9b7036a839b918e308b60 len: 4
+  2161.00ns INFO     cocotb.regression                  test_increment failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 36, in test_increment
+                                                            instcnt, mem, _ = await run_program(dut, '+++@')
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+  2161.00ns INFO     cocotb.regression                  running test_decrement (4/10)
+                                                          Decrement value of the first memory cell, i.e. *ptr--
+  2161.00ns INFO     cocotb.hexdigest                   test: 1252d81bfbff1cb7cff800ec3cdc8265
+  2162.00ns INFO     cocotb.hexdigest                   code: 0772f54a199d95c25fff832f480c9d84 len: 4
+  3216.00ns INFO     cocotb.regression                  test_decrement failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 45, in test_decrement
+                                                            instcnt, mem, _ = await run_program(dut, '---@\3')
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+  3216.00ns INFO     cocotb.regression                  running test_move (5/10)
+                                                          Move the pointer to the next cell and increment its value
+  3216.00ns INFO     cocotb.hexdigest                   test: 6ad8f16146a0b7a9b6c6c5864b7a09d4
+  3217.00ns INFO     cocotb.hexdigest                   code: 7c1cd3f96fc2c2ff2e089c27cfda24b6 len: 3
+  4271.00ns INFO     cocotb.regression                  test_move failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 53, in test_move
+                                                            instcnt, mem, _ = await run_program(dut, '>+@')
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+  4271.00ns INFO     cocotb.regression                  running test_print (6/10)
+                                                          Print data to the output, i.e. putchar(*ptr)
+  4271.00ns INFO     cocotb.hexdigest                   test: 24668f47abab8db348f5929633146476
+  4272.00ns INFO     cocotb.hexdigest                   code: b265746fe722436c7a1a1d8de199b058 len: 4
+  7826.00ns INFO     cocotb.regression                  test_print failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 61, in test_print
+                                                            instcnt, mem, lcd = await run_program(dut, '...@012', timeout_ns=LCD_WAIT_TIME*5 + 1000)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+  7826.00ns INFO     cocotb.regression                  running test_input (7/10)
+                                                          Load data from the input, i.e. *ptr=getchar()
+  7826.00ns INFO     cocotb.hexdigest                   test: aec6800b59ad46f30bf7b771207534dc
+  7827.00ns INFO     cocotb.hexdigest                   code: d3fac245532f03964cd19007b2032729 len: 4
+ 12981.00ns INFO     cocotb.regression                  test_input failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 67, in test_input
+                                                            instcnt, mem, lcd = await run_program(dut, ',,,@', kb_data='312', timeout_ns=(KB_WAIT_TIME+LCD_WAIT_TIME)*5 + 100)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+ 12981.00ns INFO     cocotb.regression                  running test_while_loop (8/10)
+                                                          Simple while loop test
+ 12981.00ns INFO     cocotb.hexdigest                   test: 30e5ba8be395952578a538d905a7de16
+ 12982.00ns INFO     cocotb.hexdigest                   code: dc8bee53ab9c57eaa957fd0fe2002e38 len: 5
+ 18036.00ns INFO     cocotb.regression                  test_while_loop failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 77, in test_while_loop
+                                                            instcnt, mem, lcd = await run_program(dut, '[.-]@\3', timeout_ns = LCD_WAIT_TIME*10)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+ 18036.00ns INFO     cocotb.regression                  running test_tmp (9/10)
+                                                          Simple temp register test
+ 18036.00ns INFO     cocotb.hexdigest                   test: f909e3e1134e5529a65895f511e6060f
+ 18037.00ns INFO     cocotb.hexdigest                   code: 77503a20e66588894e22aab0fb92677f len: 6
+ 23091.00ns INFO     cocotb.regression                  test_tmp failed
+                                                        Traceback (most recent call last):
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 276, in fff
+                                                            return await fg(dut)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 85, in test_tmp
+                                                            instcnt, mem, lcd = await run_program(dut, '$+++!@\1', timeout_ns = LCD_WAIT_TIME*10)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+ 23091.00ns INFO     cocotb.regression                  running test_login_stefies (10/10)
+                                                          Executes program in login.b file
+ 23091.00ns INFO     cocotb.hexdigest                   test: 15433415881499cc070a2e20c40c881f
+ 23092.00ns INFO     cocotb.hexdigest                   code: 7edad6a411cfdc940bf7ffbf50131ef5 len: 910
+273146.00ns INFO     cocotb.regression                  test_login_stefies failed
+                                                        Traceback (most recent call last):
+                                                          File "<makefun-gen-1>", line 2, in test_login_stefies
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 272, in ff
+                                                            return await fg(dut, uid)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/cpu.py", line 96, in test_login
+                                                            instcnt, mem, lcd = await run_program(dut, prog, timeout_ns = 250_000)
+                                                          File "/home/stefies/inp24/inp-projekt1/zadani/test/scripts/cpu_lib.py", line 262, in run_program
+                                                            proglen, mem = await with_timeout(meminst, timeout_ns, 'ns')
+                                                          File "/home/stefies/.local/lib/python3.10/site-packages/cocotb/triggers.py", line 1013, in with_timeout
+                                                            raise cocotb.result.SimTimeoutError
+                                                        cocotb.result.SimTimeoutError
+273146.00ns INFO     cocotb.regression                  ****************************************************************************************
+                                                        ** TEST                            STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        ****************************************************************************************
+                                                        ** cpu.test_reset                   FAIL          51.00           0.00      26032.56  **
+                                                        ** cpu.test_init                    FAIL        1055.00           0.02      49792.85  **
+                                                        ** cpu.test_increment               FAIL        1055.00           0.02      49363.47  **
+                                                        ** cpu.test_decrement               FAIL        1055.00           0.02      52288.79  **
+                                                        ** cpu.test_move                    FAIL        1055.00           0.02      52136.00  **
+                                                        ** cpu.test_print                   FAIL        3555.00           0.07      53313.42  **
+                                                        ** cpu.test_input                   FAIL        5155.00           0.09      55462.14  **
+                                                        ** cpu.test_while_loop              FAIL        5055.00           0.09      59148.37  **
+                                                        ** cpu.test_tmp                     FAIL        5055.00           0.09      56231.67  **
+                                                        ** cpu.test_login_stefies           FAIL      250055.00           4.29      58337.36  **
+                                                        ****************************************************************************************
+                                                        ** TESTS=10 PASS=0 FAIL=10 SKIP=0             273146.00           4.91      55679.20  **
+                                                        ****************************************************************************************
+                                                        
