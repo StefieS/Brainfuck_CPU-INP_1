@@ -1,6 +1,6 @@
 # Brainfuck CPU – INP Project 1
 
-**Course:** INP (Design of Computer Systems)  
+**Course:** INP 
 **Type:** University Assignment  
 
 ## Description
