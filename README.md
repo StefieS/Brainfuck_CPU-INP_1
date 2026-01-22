@@ -1,37 +1,42 @@
-project:
-  name: Brainfuck CPU – INP Project 1
-  course: INP (Design of Computer Systems)
-  type: University assignment
+# Brainfuck CPU – INP Project 1
 
-description: >
-  Implementation of a Brainfuck CPU / interpreter.
-  The project simulates execution of the Brainfuck programming language
-  according to the INP course specification.
+**Course:** INP (Design of Computer Systems)  
+**Type:** University Assignment  
 
-structure:
-  src: Source code of the Brainfuck CPU
-  test: Test inputs and test cases
-  requirements.txt: Python dependencies
+## Description
 
-features:
-  - Brainfuck instruction processing (>, <, +, -, ., ,, [, ])
-  - Memory tape simulation
-  - Instruction pointer control
-  - Loop handling
-  - Error handling for invalid programs
+Implementation of a **Brainfuck CPU / interpreter**.  
+The project simulates execution of the Brainfuck programming language according to the INP course specification.
 
-requirements:
-  language: Python 3.x
-  dependencies_file: requirements.txt
+## Project Structure
 
-installation:
-  command: pip install -r requirements.txt
+.
+├── src/ # Source code of the Brainfuck CPU
+├── test/ # Test inputs and test cases
+└── requirements.txt # Python dependencies
 
-testing:
-  location: test/
-  description: Test cases for validating CPU behavior
+## Features
 
-notes:
-  - Created for educational purposes
-  - Follows INP assignment requirements
+- Brainfuck instruction processing:
+  - `>` `<` `+` `-` `.` `,` `[` `]`
+- Memory tape simulation
+- Instruction pointer control
+- Loop handling
+- Error handling for invalid programs
+
+## Requirements
+
+- **Language:** Python 3.x  
+- **Dependencies file:** `requirements.txt`
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+## Testing
+
+- location: test/
+- description: Test cases for validating CPU behavior
 
