@@ -9,12 +9,12 @@ Implementation of a **Brainfuck CPU / interpreter**.
 The project simulates execution of the Brainfuck programming language according to the INP course specification.
 
 ## Project Structure
-
+```
 .
 ├── src/ # Source code of the Brainfuck CPU
 ├── test/ # Test inputs and test cases
 └── requirements.txt # Python dependencies
-
+```
 ## Features
 
 - Brainfuck instruction processing:
